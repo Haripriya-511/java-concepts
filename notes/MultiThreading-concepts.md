@@ -67,6 +67,60 @@ Atomic variables in Java ensure thread-safe, lock-free, and atomic operations us
 If the current value matches the expected value, it is replaced with a new value.
 If not, the operation fails, and the process can be retried
 
+## 5.Semaphore
+
+A Semaphore is a concurrency control mechanism in Java and other programming languages that helps manage access to shared resources. It is particularly useful when you need to limit the number of threads that can access a resource simultaneously.
+- What is a Semaphore?
+  - A Semaphore is a synchronization aid that controls access to a shared resource by maintaining a set of permits.
+  - Threads must acquire a permit before accessing the resource and release the permit when done.
+  -   [Refer this example for semaphore](../multithreading/src/multithreadingconcepts/SemaphoreExample.java)
+  -     -   [Refer this example for counting semaphore](../multithreading/src/multithreadingconcepts/CountingSemaphore.java)
+- How Semaphore Works?
+A semaphore maintains an internal counter:
+
+  - **Initialization**: The counter is set to the maximum number of permits.
+  - **Acquire**:
+Decreases the counter by 1.
+If the counter is 0, the thread waits until a permit becomes available.
+  - **Release**:
+Increases the counter by 1.
+Notifies a waiting thread (if any) that a permit is available.
+- key methods are acquire(),release(),tryAcquire(), availablePermits()
+- Real world use cases
+   - rate limiting
+   - resource pooling: Managing a fixed number of database connections, thread pools, etc.
+   - Bounded Buffers: Ensuring that producers and consumers access a limited-size buffer properly.
+ 
+## 6.Binary Semaphore
+- A Binary Semaphore is a semaphore initialized with a maximum of one permit.
+- It can be used for synchronization or mutual exclusion, but it doesn't strictly enforce ownership.
+- Threads can acquire and release permits without being the "owner" of the permit.
+-   [Refer this example](../multithreading/src/multithreadingconcepts/BinarySemaphore.java)
+## 7.Mutex
+  - A Mutex is specifically designed for mutual exclusion and enforces ownership.
+  - Only the thread that acquires the lock can release it.
+  -   [Refer this example](../multithreading/src/multithreadingconcepts/MutexExample.java)
+### When to Use Which?
+- Binary Semaphore:
+Use when you need signaling between threads or synchronization without strict ownership (e.g., one thread signals another to proceed).
+- Mutex:
+Use for protecting critical sections of code where ownership and exclusive access are essential (e.g., modifying shared data).
+- Binary Semaphore and Mutex are similar in allowing only one thread to access a resource but differ in ownership and purpose
+- ReentrantLock (Mutex) is a more flexible and powerful alternative to synchronized, offering features like fairness, try-lock, interruptible locking, and condition variables.
+- synchronized is simpler and often sufficient for basic use cases.
+- Use Mutex (ReentrantLock) when you need explicit control, fairness, or want to handle more complex locking scenarios.
+#### Ownership:
+Difference between binary sempahore and mutex is ownership constraints
+- No Ownership: A binary semaphore does not enforce ownership.
+- Any Thread Can Release: A thread that did not acquire the semaphore can release it. This makes binary semaphores more flexible but also prone to misuse, as releasing a semaphore by an unrelated thread can lead to unexpected behavior.
+- Only the Owner Can Release: The thread that acquires the mutex must release it. If another thread attempts to release the mutex, it will typically result in an error or undefined behavior.
+
+
+
+
+
+
+
 
 
 
