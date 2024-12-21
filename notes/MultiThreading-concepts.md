@@ -74,7 +74,7 @@ A Semaphore is a concurrency control mechanism in Java and other programming lan
   - A Semaphore is a synchronization aid that controls access to a shared resource by maintaining a set of permits.
   - Threads must acquire a permit before accessing the resource and release the permit when done.
   -   [Refer this example for semaphore](../multithreading/src/multithreadingconcepts/SemaphoreExample.java)
-  -     -   [Refer this example for counting semaphore](../multithreading/src/multithreadingconcepts/CountingSemaphore.java)
+  -    [Refer this example for counting semaphore](../multithreading/src/multithreadingconcepts/CountingSemaphore.java)
 - How Semaphore Works?
 A semaphore maintains an internal counter:
 
