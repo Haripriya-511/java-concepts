@@ -5,7 +5,7 @@
 - [Thread Manipulation](./Project-Notes.md)
 - [Inter-Thread Communication](./Personal-Notes.md)
 - [MultiThreading concepts](./notes/MultiThreading-concepts.md)
-- [Thread creation using executors](./Project-Notes.md)
+- [Thread creation using executors](./notes/Project-Notes.md)
 - [concurrent collections](./Personal-Notes.md)
 - [Dining philosopher problem](./Project-Notes.md)
 - [Student Library problem](./Project-Notes.md)
