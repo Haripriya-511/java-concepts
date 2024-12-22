@@ -7,7 +7,7 @@
 - [MultiThreading concepts](./notes/MultiThreading-concepts.md)
 - [Thread creation using executors](./notes/Project-Notes.md)
 - [concurrent collections](./Personal-Notes.md)
-- [Dining philosopher problem](./Project-Notes.md)
+- [Dining philosopher problem](./notes/dining-philosopher.md)
 - [Student Library problem](./Project-Notes.md)
 
 ## Collections
