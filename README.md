@@ -11,6 +11,8 @@
 - [Student Library problem](./Project-Notes.md)
 - [Parallel algorithms(parallelization)](./notes/parallelization.md)
 - [Fork-Join framework](./notes/fork-join.md)
+- [java8 Stream API](./notes/streams.md)
+- [java 21 Virtual Threads)(./notes/virtualthreads.md)
 ## Collections
 - [Work Notes](./Work/Work-Notes.md)
 - [Research Notes](./Research/Research-Notes.md)
