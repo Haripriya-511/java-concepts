@@ -1,0 +1,45 @@
+Builder pattern
+-----------------
+class Dog{
+String gender; //once dog is born cant change gender
+String name;//optional
+String breed; // once dog is born cant changed
+double price
+int age;
+}
+- so we thought of making gender breed as final
+-One client is using our Dog class
+we should allow them to set the breed or gender more than once
+because there may be chance of misusing but we can make setter as private
+- but how will they initialize at start we can provide with constructor
+Dog(gender,name,breed,price,age)
+-now they are happy but after few days we added another field
+boolean vaccinated
+-then we are changing the constructor by adding that field then client code starts failing
+the code is not backward compatible
+
+---------------------
+-suppose another client comes they might be developing some vaccination portal and they are worried only about vaccinated field
+ they are not worried about all fields then we provide one constructor to them. Then another client may come with
+ another requirement again another constructor.
+- diff client may come and we will end up in constructor loading of create exponential number of constructors( dirty code)
+- and also we are enforcing the clients to remember the order
+
+---------------------
+-Readability: Method chaining makes the object creation process more intuitive and readable.
+-Immutability: The created object can be immutable since all values are set during construction.
+-Flexibility: You can construct different representations of the same object.
+---------------------
+Examples:
+StringBuilder,ByteBuffer,CharBuffer
+java.util.Calendar.Builder
+
+------------------------
+Key Components of the Builder Pattern
+Product: The complex object that is to be built.
+Builder: An abstract interface defining the steps to build the product.
+ConcreteBuilder: A class that implements the Builder interface and provides specific implementations for building parts of the product.
+Director: A class that orchestrates the building process by using a builder instance.
+Client: Uses the Director to build the desired object.
+
+
